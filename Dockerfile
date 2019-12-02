@@ -1,4 +1,4 @@
-FROM jsimonetti/alpine-edge
+FROM alpine:latest
 
 RUN	apk add --no-cache rspamd rspamd-controller rspamd-proxy rspamd-fuzzy
 
