@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN	apk add --no-cache rspamd rspamd-controller rspamd-proxy rspamd-fuzzy
+RUN	apk add --no-cache tini rspamd rspamd-controller rspamd-proxy rspamd-fuzzy
 
 RUN	echo 'type = "console";' > /etc/rspamd/override.d/logging.inc \
 	&& echo 'bind_socket = "*:11334";' > /etc/rspamd/override.d/worker-controller.inc \
