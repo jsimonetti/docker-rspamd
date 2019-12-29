@@ -15,6 +15,7 @@ RUN	echo 'type = "console";' > /etc/rspamd/override.d/logging.inc \
 	&& echo 'upstream "local" {' > /etc/rspamd/local.d/worker-proxy.inc \
 	&& echo '  self_scan = yes;' >> /etc/rspamd/local.d/worker-proxy.inc \
 	&& echo '}' >> /etc/rspamd/local.d/worker-proxy.inc \
+	&& echo 'selector_map = "/var/lib/rspamd/dkim/dkim_selectors.map";' >> /etc/rspamd/local.d/dkim_signing.conf \
 	&& echo 'bind_socket = "*:11332";' >> /etc/rspamd/local.d/worker-proxy.inc \
 	&& echo 'password = "";' > /etc/rspamd/local.d/worker-controller.inc \
 	&& echo 'enable_password = "";' >> /etc/rspamd/local.d/worker-controller.inc
